@@ -106,57 +106,46 @@ To run this application, ensure that you have the following installed:
 
 #### Stock API
 
--  **Fetch Stock by Symbol**:
--  **URL**: `GET /api/stock/{symbol}`
--  **Description**: Retrieves stock information by its symbol.
--  **URL Parameters**: `symbol` - The stock symbol.
--  **Response**: Returns detailed information about the stock.
+-  **Get Stock by Symbol**:
 
--  **Create Stock**:
--  **URL**: `POST /api/stock`
--  **Description**: Creates a new stock entry.
--  **Request Body**: `CreateStockDto` - Details of the stock to be created.
--  **Response**: Returns the created stock information.
+   -  `GET /api/stock/{symbol}`
+   -  **Description**: Retrieves detailed information about a stock by its symbol.
 
--  **Update Stock**:
--  **URL**: `PUT /api/stock/{id}`
--  **Description**: Updates an existing stock entry.
--  **URL Parameters**: `id` - The ID of the stock.
--  **Request Body**: `UpdateStockDto` - Updated details of the stock.
--  **Response**: Returns the updated stock information.
+-  **Create a New Stock**:
 
--  **Delete Stock**:
--  **URL**: `DELETE /api/stock/{id}`
--  **Description**: Deletes a stock entry.
--  **URL Parameters**: `id` - The ID of the stock.
--  **Response**: Returns a confirmation of deletion.
+   -  `POST /api/stock`
+   -  **Description**: Creates a new stock entry. This endpoint is restricted to admin users only.
+   -  **Request Body**: `CreateStockDto` - Details of the stock to be created.
+
+-  **Update an Existing Stock**:
+
+   -  `PUT /api/stock/{id}`
+   -  **Description**: Updates an existing stock entry.
+   -  **URL Parameters**: `id` - The ID of the stock to be updated.
+   -  **Request Body**: `UpdateStockDto` - Updated details of the stock.
+
+-  **Delete a Stock**:
+   -  `DELETE /api/stock/{id}`
+   -  **Description**: Deletes a stock entry.
+   -  **URL Parameters**: `id` - The ID of the stock to be deleted.
 
 #### Portfolio API
 
--  **Fetch Portfolio by ID**:
--  **URL**: `GET /api/portfolio/{id}`
--  **Description**: Retrieves portfolio information by its ID.
--  **URL Parameters**: `id` - The ID of the portfolio.
--  **Response**: Returns details of the portfolio.
+-  **Get Portfolio by ID**:
 
--  **Create Portfolio**:
--  **URL**: `POST /api/portfolio`
--  **Description**: Creates a new portfolio entry.
--  **Request Body**: `CreatePortfolioDto` - Details of the portfolio to be created.
--  **Response**: Returns the created portfolio information.
+   -  `GET /api/portfolio/{id}`
+   -  **Description**: Retrieves detailed information about a portfolio by its ID.
 
--  **Update Portfolio**:
--  **URL**: `PUT /api/portfolio/{id}`
--  **Description**: Updates an existing portfolio entry.
--  **URL Parameters**: `id` - The ID of the portfolio.
--  **Request Body**: `UpdatePortfolioDto` - Updated details of the portfolio.
--  **Response**: Returns the updated portfolio information.
+-  **Create a New Portfolio**:
 
--  **Delete Portfolio**:
--  **URL**: `DELETE /api/portfolio/{id}`
--  **Description**: Deletes a portfolio entry.
--  **URL Parameters**: `id` - The ID of the portfolio.
--  **Response**: Returns a confirmation of deletion.
+   -  `POST /api/portfolio`
+   -  **Description**: Creates a new portfolio entry
+   -  **Request Body**: `CreatePortfolioDto` - Details of the portfolio to be created.
+
+-  **Delete a Portfolio**:
+   -  `DELETE /api/portfolio/{id}`
+   -  **Description**: Deletes a portfolio entry.
+   -  **URL Parameters**: `id` - The ID of the portfolio to be deleted.
 
 #### User Interface
 
