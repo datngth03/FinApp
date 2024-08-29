@@ -3,7 +3,6 @@ import StockCommentForm from "./StockCommentForm/StockCommentForm";
 import { commentGetAPI, commentPostAPI } from "../../Services/CommentService";
 import { toast } from "react-toastify";
 import { CommentGet } from "../../Models/Comment";
-import Spinner from "../Spinners/Spinner";
 import StockCommentList from "../StockCommentList/StockCommentList";
 
 type Props = {

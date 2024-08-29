@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import CompFinderItem from "./CompFinderItem/CompFinderItem";
 import { CompanyCompData } from "../../company";
 import { getCompData } from "../../api";
-import Spinner from "../Spinners/Spinner";
 type Props = {
     ticker: string;
 };
