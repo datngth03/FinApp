@@ -1,5 +1,6 @@
 import { useState, ChangeEvent, SyntheticEvent, useEffect } from "react";
 //import Navbar from "../../Components/Navbar/Navbar";
+import { Link } from "react-router-dom";
 import { CompanySearch } from "../../company";
 import { searchCompanies } from "../../api";
 import Search from "../../Components/Search/Search";
@@ -90,6 +91,9 @@ const SearchPage = () => {
                 searchResults={searchResult}
                 onPortfolioCreate={onPortfolioCreate}
             />
+            <Link to="/chat" className="hover:text-darkBlue">
+                Chat
+            </Link>
             {serverError && <div>Unable to connect to API</div>}
         </>
     );
