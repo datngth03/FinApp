@@ -1,0 +1,54 @@
+﻿.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 600px;
+    margin: auto;
+    border: 1px solid #ccc;
+}
+
+.message-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.my-message {
+    text-align: right;
+    background-color: #e1ffc7; /* Màu nền cho tin nhắn của mình */
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.other-message {
+    text-align: left;
+    background-color: #f1f0f0; /* Màu nền cho tin nhắn của người khác */
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center; /* Đảm bảo các phần tử trong hàng thẳng hàng */
+    padding: 10px;
+}
+
+input {
+    flex: 1; /* Chiếm không gian còn lại */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 5px; /* Khoảng cách giữa ô nhập và biểu tượng gửi */
+}
+
+.send-button {
+    background: transparent; /* Nền trong suốt */
+    border: none; /* Không có viền */
+    cursor: pointer; /* Con trỏ dạng tay khi hover */
+}
+
+    .send-button:hover {
+        color: #007bff; /* Thay đổi màu khi hover */
+    }

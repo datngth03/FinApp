@@ -9,6 +9,8 @@
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist</BuildOutputFolder>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="src\Pages\" />
+    <Folder Include="src\Components\Chat\" />
+    <Folder Include="src\Pages\LoginCallback\" />
+    <Folder Include="src\Pages\ChatPage\" />
   </ItemGroup>
 </Project>

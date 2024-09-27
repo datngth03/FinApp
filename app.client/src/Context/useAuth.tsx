@@ -5,6 +5,7 @@ import { loginAPI, registerAPI } from "../Services/AuthService";
 import { toast } from "react-toastify";
 import React from "react";
 import axios from "axios";
+import Cookies from 'js-cookie';
 
 type UserContextType = {
     user: UserProfile | null;
@@ -26,8 +27,8 @@ export const UserProvider = ({ children }: Props) => {
     const [isReady, setIsReady] = useState(false);
 
     useEffect(() => {
-        const user = localStorage.getItem("user");
-        const token = localStorage.getItem("token");
+        const user = Cookies.get("user");
+        const token = Cookies.get("token");
         if (user && token) {
             setUser(JSON.parse(user));
             setToken(token);
@@ -44,12 +45,13 @@ export const UserProvider = ({ children }: Props) => {
         await registerAPI(email, username, password)
             .then((res) => {
                 if (res) {
-                    localStorage.setItem("token", res?.data.token);
+                    Cookies.set('token', res?.data.token);
+                    Cookies.set('refreshToken', res?.data.refreshToken);
                     const userObj = {
                         userName: res?.data.userName,
                         email: res?.data.email,
                     };
-                    localStorage.setItem("user", JSON.stringify(userObj));
+                    Cookies.set('user', JSON.stringify(userObj));
                     setToken(res?.data.token!);
                     setUser(userObj!);
                     toast.success("Login Success!");
@@ -63,12 +65,13 @@ export const UserProvider = ({ children }: Props) => {
         await loginAPI(username, password)
             .then((res) => {
                 if (res) {
-                    localStorage.setItem("token", res?.data.token);
+                    Cookies.set('token', res?.data.token);
+                    Cookies.set('refreshToken', res?.data.refreshToken);
                     const userObj = {
                         userName: res?.data.userName,
                         email: res?.data.email,
                     };
-                    localStorage.setItem("user", JSON.stringify(userObj));
+                    Cookies.set('user', JSON.stringify(userObj));
                     setToken(res?.data.token!);
                     setUser(userObj!);
                     toast.success("Login Success!");
@@ -78,13 +81,14 @@ export const UserProvider = ({ children }: Props) => {
             .catch(() => toast.warning("Server error occured"));
     };
 
+
     const isLoggedIn = () => {
         return !!user;
     };
 
     const logout = () => {
-        localStorage.removeItem("token");
-        localStorage.removeItem("user");
+        Cookies.remove("token");
+        Cookies.remove("user");
         setUser(null);
         setToken("");
         navigate("/");

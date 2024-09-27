@@ -7,6 +7,8 @@ using app.server.Helpers;
 using app.server.Interfaces;
 using app.server.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.SignalR;
+using System.Threading.Tasks;
 
 namespace app.server.Repository
 {
