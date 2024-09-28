@@ -20,7 +20,7 @@ const Chat = () => {
 
     useEffect(() => {
         const newConnection = new signalR.HubConnectionBuilder()
-            .withUrl('http://localhost:5119/chathub') // Địa chỉ API của bạn
+            .withUrl('https://appserverapi.azurewebsites.net/chathub') // Địa chỉ API của bạn
             .withAutomaticReconnect()
             .build();
 
