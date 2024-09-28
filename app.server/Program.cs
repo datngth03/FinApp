@@ -33,7 +33,7 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
 });
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-/*builder.Services.AddEndpointsApiExplorer();*/
+builder.Services.AddEndpointsApiExplorer();
 /*builder.Services.AddSwaggerGen();
 builder.Services.AddSwaggerGen(option =>
 {
@@ -108,7 +108,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy", builder =>
     {
-        builder.WithOrigins("https://fin-app-sand.vercel.app")
+        builder.WithOrigins("https://localhost:5173", "http://localhost:5173", "https://fin-app-sand.vercel.app")
                .AllowAnyHeader()
                .AllowAnyMethod()
                .AllowCredentials();

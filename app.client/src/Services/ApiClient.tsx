@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 
 const apiClient = axios.create({
     baseURL: 'https://appserverapi.azurewebsites.net',
-    timeout: 1000,
+    timeout: 10000,
 });
 
 apiClient.interceptors.request.use(async (config) => {
