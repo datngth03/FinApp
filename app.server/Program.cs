@@ -33,8 +33,8 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
 });
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+/*builder.Services.AddEndpointsApiExplorer();*/
+/*builder.Services.AddSwaggerGen();
 builder.Services.AddSwaggerGen(option =>
 {
     option.SwaggerDoc("v1", new OpenApiInfo { Title = "Demo API", Version = "v1" });
@@ -61,7 +61,7 @@ builder.Services.AddSwaggerGen(option =>
             new string[]{}
         }
     });
-});
+});*/
 builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 {
     options.Password.RequireDigit = true;

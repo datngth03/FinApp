@@ -2,7 +2,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 
 const apiClient = axios.create({
-    baseURL: 'http://localhost:5119',
+    baseURL: 'https://appserver20240928091300.azurewebsites.net',
     timeout: 1000,
 });
 
